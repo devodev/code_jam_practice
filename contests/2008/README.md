@@ -17,7 +17,9 @@
 > https://code.google.com/codejam/contest/32013/dashboard
 
 #### Main script
-qualification_round.py
+qualification_round/qualification_round.py
 
 #### Explanation
+I had to use the contest analysis to provide a solution and understand the problem type.
 
+Available here: https://code.google.com/codejam/contest/32013/dashboard#s=a&a=0
