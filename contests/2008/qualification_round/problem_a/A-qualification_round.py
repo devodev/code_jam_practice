@@ -3,6 +3,7 @@ Source: https://github.com/devodev/code_jam_practice/blob/master/contests/2008/q
 Author: https://github.com/devodev
 
 Problem: A
+Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p0
 """
 
 # Input
