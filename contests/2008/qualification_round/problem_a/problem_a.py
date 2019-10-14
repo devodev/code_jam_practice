@@ -1,6 +1,5 @@
 """
-Source: https://github.com/devodev/code_jam_practice/blob/master/contests/2008/qualification_round.py
-Author: https://github.com/devodev
+Source: https://github.com/devodev/code_jam_practice/tree/master/contests/2008
 
 Problem: A
 Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p0

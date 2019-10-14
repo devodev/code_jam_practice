@@ -1,6 +1,5 @@
 """
 Source: https://github.com/devodev/code_jam_practice/tree/master/contests/2008
-Author: https://github.com/devodev
 
 Problem: B
 Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p1
@@ -39,6 +38,8 @@ Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p1
 # 0 ≤ NA, NB ≤ 100
 # 0 ≤ T ≤ 60
 
+
 N = int(input())
+count = 0
 for i in range(N):
     print('Case #{}: {}'.format(i + 1, count))
