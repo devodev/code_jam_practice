@@ -1,6 +1,8 @@
 """
 Source: https://github.com/devodev/code_jam_practice/blob/master/contests/2008/qualification_round.py
 Author: https://github.com/devodev
+
+Problem: A
 """
 
 # Input

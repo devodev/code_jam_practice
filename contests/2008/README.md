@@ -4,22 +4,20 @@
 - [Programming Language](#programming-language)
 - [Rounds](#rounds)
   - [Qualification Round](#qualification-round)
-    - [Source](#source)
-    - [Main script](#main-script)
-    - [Explanation](#explanation)
+    - [Problem A](#problem-a)
 
 ## Programming Language
 > Python 3.7
 
 ## Rounds
 ### Qualification Round
-#### Source
-> https://code.google.com/codejam/contest/32013/dashboard
+> https://code.google.com/codejam/contest/dashboard?c=32013
 
-#### Main script
-qualification_round/qualification_round.py
+#### Problem A
+> https://code.google.com/codejam/contest/dashboard?c=32013#s=p0
 
-#### Explanation
-I had to use the contest analysis to provide a solution and understand the problem type.
+qualification_round/problem_a/A-qualification_round.py
 
-Available here: https://code.google.com/codejam/contest/32013/dashboard#s=a&a=0
+I did not complete this probleme by myself and I had to use the contest analysis to provide a solution and understand the problem type.
+
+Contest analysys available here: https://code.google.com/codejam/contest/32013/dashboard#s=a&a=0
