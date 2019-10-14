@@ -5,6 +5,7 @@
 - [Rounds](#rounds)
   - [Qualification Round](#qualification-round)
     - [Problem A](#problem-a)
+    - [Problem B](#problem-b)
 
 ## Programming Language
 > Python 3.7
