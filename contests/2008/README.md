@@ -1,5 +1,14 @@
 # Google Code Jam 2008
-## Programming Language:
+
+## Table of Contents
+- [Programming Language](#programming-language)
+- [Rounds](#rounds)
+  - [Qualification Round](#qualification-round)
+    - [Source](#source)
+    - [Main script](#main-script)
+    - [Explanation](#explanation)
+
+## Programming Language
 > Python 3.7
 
 ## Rounds
