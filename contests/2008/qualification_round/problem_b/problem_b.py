@@ -5,6 +5,21 @@ Problem: B
 Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p1
 """
 
+# Problem
+
+# A train line has two stations on it, A and B.
+# Trains can take trips from A to B or from B to A multiple times during a day.
+# When a train arrives at B from A (or arrives at A from B), it needs a certain amount
+#   of time before it is ready to take the return journey - this is the turnaround time.
+# For example, if a train arrives at 12:00 and the turnaround time is 0 minutes, it can leave immediately, at 12:00.
+
+# A train timetable specifies departure and arrival time of all trips between A and B.
+# The train company needs to know how many trains have to start the day at A and B in order
+#   to make the timetable work: whenever a train is supposed to leave A or B, there must actually be one there ready to go.
+# There are passing sections on the track, so trains don't necessarily arrive in the same order that they leave.
+# Trains may not travel on trips that do not appear on the schedule. 
+
+
 # Input
 
 # The first line of input gives the number of cases, N. N test cases follow.
