@@ -53,8 +53,21 @@ Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p1
 # 0 ≤ NA, NB ≤ 100
 # 0 ≤ T ≤ 60
 
+import datetime
 
 N = int(input())
-count = 0
 for i in range(N):
-    print('Case #{}: {}'.format(i + 1, count))
+    T = int(input())
+    NA, NB = [int(s) for s in input().split(' ')]
+
+    start_a = NA
+    start_b = NB
+    for y in range(NA):
+        departure, arrival = [datetime.time(*s.split(':')) for s in input().split(' ')]
+        
+    for z in range(NB):
+        departure, arrival = [datetime.time(*s.split(':')) for s in input().split(' ')]
+
+
+    print('Case #{}: {} {}'.format(i + 1, start_a, start_b))
+    
