@@ -54,7 +54,7 @@ Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p2&a=1
 
 N = int(input())
 for i in range(N):
-    T = int(input())
-    NA, NB = [int(s) for s in input().split(' ')]
+    f, R, t, r, g = [float(s) for s in input().split(' ')]
 
-    print('Case #{}: {} {}'.format(i + 1, 0, 0))
+    P = 0
+    print('Case #{}: {}'.format(i + 1, P))
