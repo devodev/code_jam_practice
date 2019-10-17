@@ -63,6 +63,7 @@ def read_interval(s):
     arrival_minutes = (int(arr_hour) * 60) + int(arr_min)
     return departure_minutes, arrival_minutes
 
+import pprint
 N = int(input())
 for i in range(N):
     T = int(input())
@@ -82,11 +83,11 @@ for i in range(N):
         for idx in range(len(NA_list)):
             NA_departure = NA_list[idx][0]
             NA_arrival = NA_list[idx][1]
-            if not NA_departure[0] and NB_arrival + T <= NA_departure[1]:
+            if NA_departure[0] is None and NB_arrival + T <= NA_departure[1]:
                 NA_departure[0] = NB_arrival
                 NA_count -= 1
                 break
-            elif not NA_arrival[1] and NA_arrival[0] + T <= NB_departure:
+            elif NA_arrival[1] is None and NA_arrival[0] + T <= NB_departure:
                 NA_arrival[1] = NB_departure
                 NB_count -= 1
                 break
