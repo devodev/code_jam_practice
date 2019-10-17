@@ -53,7 +53,53 @@ Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p1
 # 0 ≤ NA, NB ≤ 100
 # 0 ≤ T ≤ 60
 
-import datetime
+#
+# First try
+#
+# import datetime
+
+# def read_interval(s):
+#     departure, arrival = s.split(' ')
+#     dep_hour, dep_min = departure.split(':')
+#     arr_hour, arr_min = arrival.split(':')
+#     departure_minutes = (int(dep_hour) * 60) + int(dep_min)
+#     arrival_minutes = (int(arr_hour) * 60) + int(arr_min)
+#     return departure_minutes, arrival_minutes
+
+# import pprint
+# N = int(input())
+# for i in range(N):
+#     T = int(input())
+#     NA, NB = [int(s) for s in input().split(' ')]
+
+#     NA_count = NA
+#     NB_count = NB
+#     NA_list = []
+#     for y in range(NA):
+#         NA_departure, NA_arrival = read_interval(input())
+#         NA_list.append(([None, NA_departure], [NA_arrival, None]))
+
+#     NA_list.sort(key=lambda x: (x[0][1], x[1][0]), reverse=True)
+
+#     for z in range(NB):
+#         NB_departure, NB_arrival = read_interval(input())
+#         for idx in range(len(NA_list)):
+#             NA_departure = NA_list[idx][0]
+#             NA_arrival = NA_list[idx][1]
+#             if NA_departure[0] is None and NB_arrival + T <= NA_departure[1]:
+#                 NA_departure[0] = NB_arrival
+#                 NA_count -= 1
+#                 break
+#             elif NA_arrival[1] is None and NA_arrival[0] + T <= NB_departure:
+#                 NA_arrival[1] = NB_departure
+#                 NB_count -= 1
+#                 break
+
+#     print('Case #{}: {} {}'.format(i + 1, NA_count, NB_count))
+
+from heapq import heappop
+from heapq import heappush
+
 
 def read_interval(s):
     departure, arrival = s.split(' ')
@@ -63,33 +109,30 @@ def read_interval(s):
     arrival_minutes = (int(arr_hour) * 60) + int(arr_min)
     return departure_minutes, arrival_minutes
 
-import pprint
+
 N = int(input())
 for i in range(N):
     T = int(input())
     NA, NB = [int(s) for s in input().split(' ')]
 
-    NA_count = NA
-    NB_count = NB
-    NA_list = []
+    trips = []
     for y in range(NA):
         NA_departure, NA_arrival = read_interval(input())
-        NA_list.append(([None, NA_departure], [NA_arrival, None]))
-
-    NA_list.sort(key=lambda x: (x[0][1], x[1][0]), reverse=True)
-
-    for z in range(NB):
+        trips.append((NA_departure, NA_arrival, 0))
+    for y in range(NB):
         NB_departure, NB_arrival = read_interval(input())
-        for idx in range(len(NA_list)):
-            NA_departure = NA_list[idx][0]
-            NA_arrival = NA_list[idx][1]
-            if NA_departure[0] is None and NB_arrival + T <= NA_departure[1]:
-                NA_departure[0] = NB_arrival
-                NA_count -= 1
-                break
-            elif NA_arrival[1] is None and NA_arrival[0] + T <= NB_departure:
-                NA_arrival[1] = NB_departure
-                NB_count -= 1
-                break
+        trips.append((NB_departure, NB_arrival, 1))
 
-    print('Case #{}: {} {}'.format(i + 1, NA_count, NB_count))
+    trips.sort()
+
+    start = [0, 0]
+    trains = [[], []]
+    for trip in trips:
+        d = trip[2]
+        if trains[d] and trains[d][0] <= trip[0]:
+            heappop(trains[d])
+        else:
+            start[d] += 1
+        heappush(trains[1 - d], trip[1] + T)
+
+    print('Case #{}: {} {}'.format(i + 1, start[0], start[1]))
