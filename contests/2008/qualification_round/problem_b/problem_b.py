@@ -55,19 +55,40 @@ Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p1
 
 import datetime
 
+def read_interval(s):
+    departure, arrival = s.split(' ')
+    dep_hour, dep_min = departure.split(':')
+    arr_hour, arr_min = arrival.split(':')
+    departure_minutes = (int(dep_hour) * 60) + int(dep_min)
+    arrival_minutes = (int(arr_hour) * 60) + int(arr_min)
+    return departure_minutes, arrival_minutes
+
 N = int(input())
 for i in range(N):
     T = int(input())
     NA, NB = [int(s) for s in input().split(' ')]
 
-    start_a = NA
-    start_b = NB
+    NA_count = NA
+    NB_count = NB
+    NA_list = []
     for y in range(NA):
-        departure, arrival = [datetime.time(*s.split(':')) for s in input().split(' ')]
-        
+        NA_departure, NA_arrival = read_interval(input())
+        NA_list.append(([None, NA_departure], [NA_arrival, None]))
+
+    NA_list.sort(key=lambda x: (x[0][1], x[1][0]), reverse=True)
+
     for z in range(NB):
-        departure, arrival = [datetime.time(*s.split(':')) for s in input().split(' ')]
+        NB_departure, NB_arrival = read_interval(input())
+        for idx in range(len(NA_list)):
+            NA_departure = NA_list[idx][0]
+            NA_arrival = NA_list[idx][1]
+            if not NA_departure[0] and NB_arrival + T <= NA_departure[1]:
+                NA_departure[0] = NB_arrival
+                NA_count -= 1
+                break
+            elif not NA_arrival[1] and NA_arrival[0] + T <= NB_departure:
+                NA_arrival[1] = NB_departure
+                NB_count -= 1
+                break
 
-
-    print('Case #{}: {} {}'.format(i + 1, start_a, start_b))
-    
+    print('Case #{}: {} {}'.format(i + 1, NA_count, NB_count))
