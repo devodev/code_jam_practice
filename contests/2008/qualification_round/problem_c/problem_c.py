@@ -50,11 +50,26 @@ Link: https://code.google.com/codejam/contest/dashboard?c=32013#s=p2&a=1
 # 1 ≤ N ≤ 100
 # 
 # The total number of strings will be at most 2000 (so at most 1000 in each direction).
+#
+# f: Fly radius
+# R: Circle radius
+# t: Circle thickness
+# r: String radius
+# g: gap length between strings
+
+import math
 
 
 N = int(input())
 for i in range(N):
     f, R, t, r, g = [float(s) for s in input().split(' ')]
+
+    nb_lines = math.floor(side / g) - 1
+
+    square_area = (2*R)**2
+    strings1 = nb_lines * (R * (2*r))
+    strings1 = nb_lines * ((R * (2*r)) * (nb_lines * (2*r)**2))
+    available_surface = (side - (nb_lines * (2*r)))**2
 
     P = 0
     print('Case #{}: {}'.format(i + 1, P))
